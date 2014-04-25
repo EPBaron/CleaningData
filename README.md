@@ -1,5 +1,4 @@
 # Peer Assessment Assignment for Getting and Cleaning Data
-============
 
 This repository contains data files and R scripts for the Peer Assessment assignment which is part of the Johns Hopkins Coursera class on Getting and Cleaning Data.  The assignment instructions were as follows:
 
@@ -75,6 +74,7 @@ I wasn't entirely satisified with the labels for observations.  Further analysis
 | statistic | mean, std                |
 
 My goal was to create a data table for my tidy data set with the following columns:
+
 | subject | activity | domain | area | device | axis | statistic | value |
 
 My goal was a very tall, skinny data set with that would better satisfy the rules for tidy data as outlined in http://vita.had.co.nz/papers/tidy-data.pdf
