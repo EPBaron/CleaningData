@@ -20,7 +20,8 @@ This repository contains data files and R scripts for the Peer Assessment assign
 >    3. Uses descriptive activity names to name the activities in the data set
 >    4. Appropriately labels the data set with descriptive activity names. 
 >    5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
----
+ 
+
 # Approach and Scripts
 For this assignment, it is assumed that the current working directory contains the R scripts and that the data have been downloaded using the link above.  They should be uncompressed into a folder called "UCI HAR Dataset" that is a subdirectory of the script directory.
 The following are descriptions of the scripts and their related dependencies.
@@ -49,7 +50,8 @@ The script relabels the columns of the data set.  For observations it uses the n
 ### Task 5
 The script does a quick check for missing values in the combined data set.  It then converts the data frame to a data table for ease of processing.  It uses the capabilitis of the data.table library to summarize observation values for each combination of subject and activity.  The data is then sorted by subject using the arrange() function in the plyr package.
 The resulting data set is considered tidy for the purposes of this assignment.  [See below for further discussion.]  The resulting file, "tidydata.txt", is then output in tab-delimited format.
----
+ 
+
 ## Supporting Scripts
 In the course of execution, the run_analysis.R script calls the follwing scripts:
 
@@ -59,9 +61,11 @@ The script is called with the "features.txt" file and does a regular expression 
 
 ### translateActivities.R
 This script is used as a lookup table to translate activity numbers to names, as described in the file "activity_labels.txt" within the data set.  It creates a character vector with the activity names in the same index order as the corresponding number.  The script is called within the run_analysis.R script with a list created by merging the files "y_train.txt" andn "y_test.txt" that contains activity numbers or each observation of the training and test data sets, respectively.  It then uses lapply and an anonymous function to translate activity numbers into activity names for an input file.  It returns a data frame of activity names.
----
+ 
+
 ## Thoughts on Data Labels and Tidy Data
 I wasn't entirely satisified with the labels for observations.  Further analysis let me to break them down into the following feature dimensions:
+
 | Dimension |        Values            |
 | --------- | ------------------------ |
 | domain    | time, frequency          |
