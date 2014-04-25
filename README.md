@@ -76,6 +76,7 @@ I wasn't entirely satisified with the labels for observations.  Further analysis
 My goal was to create a data table for my tidy data set with the following columns:
 
 | subject | activity | domain | area | device | axis | statistic | value |
+| ------- | -------- | ------ | ---- | ------ | ---- | --------- | ----- |
 
 My goal was a very tall, skinny data set with that would better satisfy the rules for tidy data as outlined in http://vita.had.co.nz/papers/tidy-data.pdf
 Unfortunately, I'm not proficient enough with R to accomplish this task.  I consulted the tutorials provided in the class notes, including http://www.slideshare.net/jeffreybreen/reshaping-data-in-r as well as function help for *melt()* and *dcast()*, but it was still beyond my current skill level.
