@@ -27,14 +27,17 @@ The following are descriptions of the scripts and their related dependencies.
 
 ## Main script run_analysis.R
 This is the master script for processing the data set.  It requires packages:
-data.table
-plyr
+
++ data.table
++ plyr
 
 ### Task 1
 The script starts by reading and merging trainig and test data sets in three parts:
-Observations from files "X_train.txt" and "X_test.txt" in the train and test directories, respectively
-Identification numbers of the 30 test subjects for each observation from files "subject_train.txt" and "subject_test.txt".
-Activity numbers for each observation from files "y_train.txt" and "y_test.txt".
+
+- Observations from files "X_train.txt" and "X_test.txt" in the train and test directories, respectively
+- Identification numbers of the 30 test subjects for each observation from files "subject_train.txt" and "subject_test.txt".
+- Activity numbers for each observation from files "y_train.txt" and "y_test.txt".
+
 Each file combination is then merged using the rbind() command to create files of a single data set.
 
 ### Task 2
@@ -47,7 +50,7 @@ The script calls another script, translateActivites.R (described below), to tran
 The script relabels the columns of the data set.  For observations it uses the names from the "features.txt" file.  [See below for additional discussion on data labels.]
 
 ### Task 5
-The script does a quick check for missing values in the combined data set.  It then converts the data frame to a data table for ease of processing.  It uses the capabilitis of the data.table library to summarize observation values for each combination of subject and activity.  The data is then sorted by subject using the arrange() function in the plyr package.
+The script does a quick check for missing values in the combined data set.  It then converts the data frame to a data table for ease of processing.  It uses the capabilitis of the data.table library to summarize observation values for each combination of subject and activity.  The data is then sorted by subject using the *arrange()* function in the plyr package.
 The resulting data set is considered tidy for the purposes of this assignment.  [See below for further discussion.]  The resulting file, "tidydata.txt", is then output in tab-delimited format.
  
 
@@ -78,5 +81,5 @@ My goal was to create a data table for my tidy data set with the following colum
 | subject | activity | domain | area | device | axis | statistic | value |
 | ------- | -------- | ------ | ---- | ------ | ---- | --------- | ----- |
 
-My goal was a very tall, skinny data set with that would better satisfy the rules for tidy data as outlined in http://vita.had.co.nz/papers/tidy-data.pdf
+This would produce a very tall, skinny data set with that would better satisfy the rules for tidy data as outlined in http://vita.had.co.nz/papers/tidy-data.pdf.  
 Unfortunately, I'm not proficient enough with R to accomplish this task.  I consulted the tutorials provided in the class notes, including http://www.slideshare.net/jeffreybreen/reshaping-data-in-r as well as function help for *melt()* and *dcast()*, but it was still beyond my current skill level.
