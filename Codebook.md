@@ -1,4 +1,8 @@
 # Codebook for Peer Assessment
+For reference, this is when I downloaded the data set:
+> datedownloaded <- date()
+> datedownloaded
+[1] "Fri Apr 18 12:15:45 2014"
 
 # Approach and Scripts
 For this assignment, it is assumed that the current working directory contains the R scripts and that the data have been downloaded using the link above.  They should be uncompressed into a folder called "UCI HAR Dataset" that is a subdirectory of the script directory.
@@ -54,7 +58,76 @@ In the tidy data file, I included the 66 data measures of mean and standard devi
 | axis      | X, Y, Z, Magnitude       |
 | statistic | mean, std                |
 
-I would have liked to reformat the tidy data table into these dimensions.
+I would have liked to reformat the tidy data table into these dimensions.  Instead, I left them in their original form for the reasons below.
+
+domain	area	device	axis	stat	dim     measure
+time	Body	Accelerometer	Mag	mean	tBodyAccMag-mean()
+time	Body	Accelerometer	X	mean	tBodyAcc-mean()-X
+time	Body	Accelerometer	Y	mean	tBodyAcc-mean()-Y
+time	Body	Accelerometer	Z	mean	tBodyAcc-mean()-Z
+time	Body	Accelerometer	Mag	std	tBodyAccMag-std()
+time	Body	Accelerometer	X	std	tBodyAcc-std()-X
+time	Body	Accelerometer	Y	std	tBodyAcc-std()-Y
+time	Body	Accelerometer	Z	std	tBodyAcc-std()-Z
+time	Body	Gyroscope	Mag	mean	tBodyGyroMag-mean()
+time	Body	Gyroscope	X	mean	tBodyGyro-mean()-X
+time	Body	Gyroscope	Y	mean	tBodyGyro-mean()-Y
+time	Body	Gyroscope	Z	mean	tBodyGyro-mean()-Z
+time	Body	Gyroscope	Mag	std	tBodyGyroMag-std()
+time	Body	Gyroscope	X	std	tBodyGyro-std()-X
+time	Body	Gyroscope	Y	std	tBodyGyro-std()-Y
+time	Body	Gyroscope	Z	std	tBodyGyro-std()-Z
+time	BodyJerk	Accelerometer	Mag	mean	tBodyAccJerkMag-mean()
+time	BodyJerk	Accelerometer	X	mean	tBodyAccJerk-mean()-X
+time	BodyJerk	Accelerometer	Y	mean	tBodyAccJerk-mean()-Y
+time	BodyJerk	Accelerometer	Z	mean	tBodyAccJerk-mean()-Z
+time	BodyJerk	Accelerometer	Mag	std	tBodyAccJerkMag-std()
+time	BodyJerk	Accelerometer	X	std	tBodyAccJerk-std()-X
+time	BodyJerk	Accelerometer	Y	std	tBodyAccJerk-std()-Y
+time	BodyJerk	Accelerometer	Z	std	tBodyAccJerk-std()-Z
+time	BodyJerk	Gyroscope	Mag	mean	tBodyGyroJerkMag-mean()
+time	BodyJerk	Gyroscope	X	mean	tBodyGyroJerk-mean()-X
+time	BodyJerk	Gyroscope	Y	mean	tBodyGyroJerk-mean()-Y
+time	BodyJerk	Gyroscope	Z	mean	tBodyGyroJerk-mean()-Z
+time	BodyJerk	Gyroscope	Mag	std	tBodyGyroJerkMag-std()
+time	BodyJerk	Gyroscope	X	std	tBodyGyroJerk-std()-X
+time	BodyJerk	Gyroscope	Y	std	tBodyGyroJerk-std()-Y
+time	BodyJerk	Gyroscope	Z	std	tBodyGyroJerk-std()-Z
+time	Gravity	Accelerometer	Mag	mean	tGravityAccMag-mean()
+time	Gravity	Accelerometer	X	mean	tGravityAcc-mean()-X
+time	Gravity	Accelerometer	Y	mean	tGravityAcc-mean()-Y
+time	Gravity	Accelerometer	Z	mean	tGravityAcc-mean()-Z
+time	Gravity	Accelerometer	Mag	std	tGravityAccMag-std()
+time	Gravity	Accelerometer	X	std	tGravityAcc-std()-X
+time	Gravity	Accelerometer	Y	std	tGravityAcc-std()-Y
+time	Gravity	Accelerometer	Z	std	tGravityAcc-std()-Z
+frequency	Body	Accelerometer	Mag	mean	fBodyAccMag-mean()
+frequency	Body	Accelerometer	X	mean	fBodyAcc-mean()-X
+frequency	Body	Accelerometer	Y	mean	fBodyAcc-mean()-Y
+frequency	Body	Accelerometer	Z	mean	fBodyAcc-mean()-Z
+frequency	Body	Accelerometer	Mag	std	fBodyAccMag-std()
+frequency	Body	Accelerometer	X	std	fBodyAcc-std()-X
+frequency	Body	Accelerometer	Y	std	fBodyAcc-std()-Y
+frequency	Body	Accelerometer	Z	std	fBodyAcc-std()-Z
+frequency	Body	Gyroscope	Mag	mean	fBodyBodyGyroMag-mean()
+frequency	Body	Gyroscope	X	mean	fBodyGyro-mean()-X
+frequency	Body	Gyroscope	Y	mean	fBodyGyro-mean()-Y
+frequency	Body	Gyroscope	Z	mean	fBodyGyro-mean()-Z
+frequency	Body	Gyroscope	Mag	std	fBodyBodyGyroMag-std()
+frequency	Body	Gyroscope	X	std	fBodyGyro-std()-X
+frequency	Body	Gyroscope	Y	std	fBodyGyro-std()-Y
+frequency	Body	Gyroscope	Z	std	fBodyGyro-std()-Z
+frequency	BodyJerk	Accelerometer	Mag	mean	fBodyBodyAccJerkMag-mean()
+frequency	BodyJerk	Accelerometer	X	mean	fBodyAccJerk-mean()-X
+frequency	BodyJerk	Accelerometer	Y	mean	fBodyAccJerk-mean()-Y
+frequency	BodyJerk	Accelerometer	Z	mean	fBodyAccJerk-mean()-Z
+frequency	BodyJerk	Accelerometer	Mag	std	fBodyBodyAccJerkMag-std()
+frequency	BodyJerk	Accelerometer	X	std	fBodyAccJerk-std()-X
+frequency	BodyJerk	Accelerometer	Y	std	fBodyAccJerk-std()-Y
+frequency	BodyJerk	Accelerometer	Z	std	fBodyAccJerk-std()-Z
+frequency	BodyJerk	Gyroscope	Mag	mean	fBodyBodyGyroJerkMag-mean()
+frequency	BodyJerk	Gyroscope	Mag	std	fBodyBodyGyroJerkMag-std()
+
 
 ### Thoughts on Data Labels and Tidy Data
 My goal was to create a data table for my tidy data set with the following columns:
