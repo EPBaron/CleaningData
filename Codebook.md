@@ -60,7 +60,7 @@ In the tidy data file, I included the 66 data measures of mean and standard devi
 
 I would have liked to reformat the tidy data table into these dimensions.  Instead, I left them in their original form for the reasons below.
 
-|	domain	|	area	|	device	|	axis	|	stat	|	dim	|  measure              |
+|	domain	|	area	|	device	|	axis	|	stat	|	dim	|
 |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:---------------------:|
 |	time	|	Body	|	Accelerometer	|	Mag	|	mean	|	tBodyAccMag-mean()	|
 |	time	|	Body	|	Accelerometer	|	X	|	mean	|	tBodyAcc-mean()-X	|
