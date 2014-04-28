@@ -1,25 +1,4 @@
-# Peer Assessment Assignment for Getting and Cleaning Data
-
-This repository contains data files and R scripts for the Peer Assessment assignment which is part of the Johns Hopkins Coursera class on Getting and Cleaning Data.  The assignment instructions were as follows:
-
-> The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. You will be graded by your peers on a series of yes/no questions related to the project. You will be required to submit: 1) a tidy data set as described below, 2) a link to a Github repository with your script for performing the analysis, and 3) a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md. You should also include a README.md in the repo with your scripts. This repo explains how all of the scripts work and how they are connected. 
-
-> One of the most exciting areas in all of data science right now is wearable computing - see for example this article . Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
-
-> http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
-
-> Here are the data for the project:
-
-> https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-
-> You should create one R script called run_analysis.R that does the following. 
-
->    1. Merges the training and the test sets to create one data set.
->    2. Extracts only the measurements on the mean and standard deviation for each measurement. 
->    3. Uses descriptive activity names to name the activities in the data set
->    4. Appropriately labels the data set with descriptive activity names. 
->    5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
- 
+# Codebook for Peer Assessment
 
 # Approach and Scripts
 For this assignment, it is assumed that the current working directory contains the R scripts and that the data have been downloaded using the link above.  They should be uncompressed into a folder called "UCI HAR Dataset" that is a subdirectory of the script directory.
@@ -64,9 +43,8 @@ The script is called with the "features.txt" file and does a regular expression 
 ### translateActivities.R
 This script is used as a lookup table to translate activity numbers to names, as described in the file "activity_labels.txt" within the data set.  It creates a character vector with the activity names in the same index order as the corresponding number.  The script is called within the run_analysis.R script with a list created by merging the files "y_train.txt" andn "y_test.txt" that contains activity numbers or each observation of the training and test data sets, respectively.  It then uses lapply and an anonymous function to translate activity numbers into activity names for an input file.  It returns a data frame of activity names.
  
-
-## Thoughts on Data Labels and Tidy Data
-I wasn't entirely satisified with the labels for observations.  Further analysis let me to break them down into the following feature dimensions:
+## Variables
+In the tidy data file, I included the 66 data measures of mean and standard deviation from the original data file.  I did not include meanFreq() measures since they seemed to be a different type of measure.  The axial measures mean|std()-[X,Y,X] were derived from raw accelerometer and gyroscope readings, but I included them anyway.  These could be further decomposed into the following dimensions:
 
 | Dimension |        Values            |
 | --------- | ------------------------ |
@@ -76,6 +54,9 @@ I wasn't entirely satisified with the labels for observations.  Further analysis
 | axis      | X, Y, Z, Magnitude       |
 | statistic | mean, std                |
 
+I would have liked to reformat the tidy data table into these dimensions.
+
+### Thoughts on Data Labels and Tidy Data
 My goal was to create a data table for my tidy data set with the following columns:
 
 | subject | activity | domain | area | device | axis | statistic | value |
