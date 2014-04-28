@@ -20,6 +20,7 @@ This repository contains data files and R scripts for the Peer Assessment assign
 >    4. Appropriately labels the data set with descriptive activity names. 
 >    5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
  
+The following is included both in the README.md and Codebook.md files.
 
 # Approach and Scripts
 For this assignment, it is assumed that the current working directory contains the R scripts and that the data have been downloaded using the link above.  They should be uncompressed into a folder called "UCI HAR Dataset" that is a subdirectory of the script directory.
